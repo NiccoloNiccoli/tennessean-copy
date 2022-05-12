@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="stylesheet.css" rel="stylesheet">
+    <title>Home</title>
+    <!--TBD
+    <meta name="description" content="">
+    <meta name="keywords" content="esercitazione, ppm, dormire, fare pisolino, sonnolenza">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <script>
+        function timeSince(date) {
+
+            var seconds = Math.floor((new Date() - date) / 1000);
+
+            var interval = seconds / 31536000;
+
+            if (interval > 1) {
+                return Math.floor(interval) + " years";
+            }
+            interval = seconds / 2592000;
+            if (interval > 1) {
+                return Math.floor(interval) + " months";
+            }
+            interval = seconds / 86400;
+            if (interval > 1) {
+                return Math.floor(interval) + " days";
+            }
+            interval = seconds / 3600;
+            if (interval > 1) {
+                return Math.floor(interval) + " hours";
+            }
+            interval = seconds / 60;
+            if (interval > 1) {
+                return Math.floor(interval) + " minutes";
+            }
+            return Math.floor(seconds) + " seconds";
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <ul id="menu">
+                <li><a href="#" class="toggle-menu"><span></span></a></li>
+                <li><a href="#" id="logo" title="Logo">Tennessean<span id="logo-blue-point">.</span></a></li><!--TBD-->
+                <li><a href="#" title="Home">Home</a></li>
+                <li><a href="#" title="News">News</a></li>
+                <li><a href="#" title="Countries">Countries</a></li>
+                <li><a href="#" title="Sports">Sports</a></li>
+                <li><a href="#" title="Business">Business</a></li>
+                <li><a href="#" title="Music">Music</a></li>
+                <li><a href="#" title="Civility Tennessee">Civility Tennesee</a></li>
+                <li><a href="#" title="Politics">Politics</a></li>
+                <li><a href="#" title="Obituaries">Obituaries</a></li>
+                <li><a href="#" title="Things To Do">Things To Do</a></li>
+                <li><a href="#" title="Dining">Dining</a></li>
+                <li><a href="#" title="Life">Life</a></li>
+                <li><a href="#" title="Explore Tennessee">Explore Tennessee</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<div class="container-main">
+    <div class="main-article">
+        <img src="https://via.placeholder.com/370x205" alt="Main article image"/>
+        <div class="content-article">
+            <a href="#"><h3>Lorem ipsum dolor sit amet</h3></a>
+            <div class="article-details">
+                <p>
+                    Genre - <span id="dat">xxx</span>
+                    <script>
+                        document.getElementById("dat").innerHTML = timeSince(new Date(Date.UTC(2022,4,12,13,46,0,0)))+" ago";
+                    </script>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
