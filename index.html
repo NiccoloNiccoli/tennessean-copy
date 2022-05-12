@@ -60,22 +60,94 @@
             </ul>
         </div>
     </nav>
-
 <div class="container-main">
     <div class="main-article">
         <img src="https://via.placeholder.com/370x205" alt="Main article image"/>
         <div class="content-article">
-            <a href="#"><h3>Lorem ipsum dolor sit amet</h3></a>
-            <div class="article-details">
-                <p>
-                    Genre - <span id="dat">xxx</span>
-                    <script>
-                        document.getElementById("dat").innerHTML = timeSince(new Date(Date.UTC(2022,4,12,13,46,0,0)))+" ago";
-                    </script>
-                </p>
+            <a href="#"><h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris finibus.</h3></a>
+            <div class="article-gist">
+               <p>
+                   Suspendisse ornare ex id leo sodales fermentum vitae nec leo.
+                   Curabitur suscipit vestibulum mauris, ac placerat neque pulvinar non.
+                   Integer tempus sapien elementum nibh ultricies.
+               </p>
             </div>
         </div>
     </div>
+    <div class="secondary-articles-column">
+        <div class="secondary-article">
+            <img src="https://via.placeholder.com/260x150" alt="Secondary article image"/>
+            <div class="content-article">
+                <a href="#"><h5>Pellentesque varius dignissim turpis at lacinia. Fusce lobortis feugiat augue.</h5></a>
+            </div>
+        </div>
+
+        <div class="secondary-article">
+            <img src="https://via.placeholder.com/260x150" alt="Secondary article image"/>
+            <div class="content-article">
+                <a href="#"><h5>Aenean vehicula odio dui, condimentum suscipit ante faucibus sit amet.</h5></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="recent-news-column">
+            <div class="content-article">
+                <a href="#">
+                    <div class="recent-news-title">
+                        <h5>Nullam sagittis pretium odio et pulvinar. Pellentesque tincidunt enim scelerisque.</h5>
+                    </div>
+                    <div class="additional-data">
+                        Topic | <span id="date1"></span>
+                        <script>
+                            document.getElementById("date1").innerHTML = timeSince(new Date(Date.UTC(2022, 4, 12, 19, 8, 0, 0))) + " ago";
+                        </script>
+                    </div>
+                </a>
+            </div>
+            <div class="content-article">
+                <div class="for-subscribers"><div class="square"></div> FOR SUBSCRIBERS</div>
+            <a href="#">
+                <div class="recent-news-title">
+                    <h5>Donec sodales est ac porttitor dictum. Nam a dolor id.</h5>
+                </div>
+                <div class="additional-data">
+                    Topic | <span id="date2"></span>
+                    <script>
+                        document.getElementById("date2").innerHTML = timeSince(new Date(Date.UTC(2022, 4, 11, 19, 2, 0, 0))) + " ago";
+                    </script>
+                </div>
+            </a>
+        </div>
+            <div class="content-article">
+            <div class="for-subscribers"><div class="square"></div> FOR SUBSCRIBERS</div>
+            <a href="#">
+                <div class="recent-news-title">
+                    <h5>Nulla maximus efficitur dolor, sit amet malesuada leo hendrerit sit.</h5>
+                </div>
+                <div class="additional-data">
+                    Topic | <span id="date3"></span>
+                    <script>
+                        document.getElementById("date3").innerHTML = timeSince(new Date(Date.UTC(2022, 4, 12, 20, 2, 0, 0))) + " ago";
+                    </script>
+                </div>
+            </a>
+        </div>
+            <div class="content-article">
+                <a href="#">
+                    <div class="recent-news-title">
+                        <h5>Vivamus ultrices ipsum sed lacinia euismod. Phasellus sagittis efficitur tristique.</h5>
+                    </div>
+                    <div class="additional-data">
+                        Topic | <span id="date4"></span>
+                        <script>
+                            document.getElementById("date4").innerHTML = timeSince(new Date(Date.UTC(2022, 4, 8, 19, 8, 0, 0))) + " ago";
+                        </script>
+                    </div>
+                </a>
+            </div>
+    </div>
+
 </div>
+
 </body>
 </html>

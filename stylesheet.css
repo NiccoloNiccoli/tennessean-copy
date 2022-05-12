@@ -1,21 +1,34 @@
+@import url('http://fonts.cdnfonts.com/css/unify-serif');
+
 html{
     font-size:100%;
 }
 /*#009BFF*/
 body{
- background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
 }
 /* START NAVBAR */
 .navbar{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    width: 100%;
     background-color: #ffffff;
     border-bottom:1px solid #e0e0e0;
-    position: fixed;
+    min-height: 10px;
+    padding: 15px 0 25px 0;
+
 }
 .container{
     width:100%;
 }
+#menu{
+    margin: 0;
+}
 #menu li{
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Unify Sans', Helvetica, Arial, sans-serif;
     font-weight: 550;
     display: block;
     float:left;
@@ -39,6 +52,113 @@ body{
 /* END NAVBAR */
 
 /* START MAIN */
+.container-main{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    max-height: 100%;
+    margin: 0 0 20px 0;
+    background-color: #ffffff;
+}
+
+.main-article, .secondary-articles-column{
+    margin: 0 30px 0 0;
+}
+
+.content-article{
+    background-color: #ffffff;
+    position: relative;
+}
+.main-article .content-article{
+    top:-60px;
+    width:340px;
+}
+.secondary-article .content-article{
+    top:-40px;
+    width: 240px;
+}
+.content-article a:link, .content-article a:visited{
+    color:#222222;
+    text-decoration: none;
+    font-family: Helvetica,Arial, sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+}
+.content-article a:hover{
+    text-decoration: underline;
+    text-decoration-color: #009BFF;
+    text-decoration-thickness: 0.2rem;
+}
+.content-article a h3{
+    margin:0;
+    padding: 10px 10px 10px 0;
+    font-weight: 600;
+    font-size: 95%;
+    font-family: 'Unify Sans', Helvetica, Arial, sans-serif;
+}
+.article-gist p{
+    font-size:16px;
+    text-justify: auto;
+    margin: 0;
+    padding: 0 10px 0 0;
+    font-family: 'Unify Serif', "Times New Roman", serif;
+}
+.content-article a h5{
+    margin:0;
+    padding: 10px 10px 10px 0;
+    font-weight: 600;
+    font-size: 75%;
+    font-family: 'Unify Sans', Helvetica, Arial, sans-serif;
+}
+
+.recent-news-column .content-article{
+    margin: 10px 0 40px 0;
+    max-width: 300px;
+}
+
+.recent-news-column .content-article a:hover{
+    text-decoration: none;
+}
+
+
+.recent-news-column .content-article a:hover h5{
+    text-decoration: underline;
+    text-decoration-thickness: 0.15rem;
+    text-decoration-color: #009BFF;
+}
+.additional-data{
+    font-size:14px;
+    font-weight: bold;
+    color: #626262;
+}
+.additional-data span{
+    font-weight: normal;
+    font-family: 'Unify Sans', Helvetica, Arial, sans-serif;
+}
+
+.square{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #009BFF;
+    margin: 0 10px 0 0;
+}
+.recent-news-column .content-article a h5{
+    padding-top:5px;
+}
+.for-subscribers{
+    color: #009BFF;
+    font-size: 14px;
+    font-weight: 550;
+    margin: 10px 0 0 0;
+    font-family: 'Unify Sans', Helvetica, Arial, sans-serif;
+}
+/* END MAIN */
+
+
+/*
 .container-main{
     margin-bottom: 10px;
     display: flex;
@@ -87,4 +207,4 @@ body{
 .content-article .article-gist p{
     margin: auto;
 }
-/* END MAIN */
+ */
