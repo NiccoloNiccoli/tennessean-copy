@@ -36,14 +36,119 @@
             }
             return Math.floor(seconds) + " seconds";
         }
+
+        function openDropDown(){
+            document.getElementById("myDropdown").classList.toggle("show");
+            document.getElementById("overlay-background").classList.toggle("show");
+            document.getElementById("body").classList.toggle("block-scroll");
+        }
+
+        function closeDropDown(){
+            document.getElementById("myDropdown").classList.toggle("show");
+            document.getElementById("overlay-background").classList.toggle("show");
+            document.getElementById("body").classList.toggle("block-scroll");
+        }
+
+        function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
     </script>
 </head>
-<body>
+<body id="body">
     <nav class="navbar">
         <div class="container">
+            <div id="overlay-background" class="overlay"></div>
             <ul id="menu">
-                <li><a href="#" class="toggle-menu"><span></span></a></li>
-                <li><a href="#" id="logo" title="Logo">Tennessean<span id="logo-blue-point">.</span></a></li><!--TBD-->
+                <li>
+                    <div class="dropdown">
+                        <button onclick="openDropDown()" class="dropbtn"></button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <div class="dropdown-container">
+                                <div id="title-dd">
+                                    Tennessean<span class="logo-blue-point">.</span>
+                                    <button onclick="closeDropDown()" class="close-button-dd"></button>
+                                </div>
+                                <div id="buttons-dd">
+                                    <button id="subscribe">Subscribe</button>
+                                    <button id="sign-in">Sign In</button>
+                                </div>
+                                <div id="search-bar-dd">
+                                    <input type="text" placeholder="What do you want to find?" id="myInput" onkeyup="filterFunction()">
+                                    <img src="Icons/find.svg" alt="search icon" id="search-icon">
+                                </div>
+                                <div class="main-topics-container">
+                                    <ul>
+                                        <li>
+                                            <a href="#" title="News">News</a>
+                                            <img src="Icons/dropdown-arrow.png" alt="dropdown arrow to open submenu">
+                                        </li>
+                                        <li>
+                                            <a href="#" title="Countries">Countries</a>
+                                            <img src="Icons/dropdown-arrow.png" alt="dropdown arrow to open submenu">
+                                        </li>
+                                        <li><a href="#" title="Sports">Sports</a>
+                                            <img src="Icons/dropdown-arrow.png" alt="dropdown arrow to open submenu">
+                                        </li>
+                                        <li><a href="#" title="Business">Business</a>
+                                            <img src="Icons/dropdown-arrow.png" alt="dropdown arrow to open submenu">
+                                        </li>
+                                        <li><a href="#" title="Music">Music</a>
+                                            <img src="Icons/dropdown-arrow.png" alt="dropdown arrow to open submenu">
+                                        </li>
+                                        <li><a href="#" title="Civility Tennessee">Civility Tennesee</a>
+                                        </li>
+                                        <li><a href="#" title="Politics">Politics</a>
+                                        </li>
+                                        <li><a href="#" title="Obituaries">Obituaries</a>
+                                        </li>
+                                        <li><a href="#" title="Things To Do">Things To Do</a>
+                                        </li>
+                                        <li><a href="#" title="Dining">Dining</a>
+                                            <img src="Icons/dropdown-arrow.png" alt="dropdown arrow to open submenu">
+                                        </li>
+                                        <li><a href="#" title="Life">Life</a>
+                                            <img src="Icons/dropdown-arrow.png" alt="dropdown arrow to open submenu">
+                                        </li>
+                                        <li><a href="#" title="Explore Tennessee">Explore Tennessee</a>
+                                            <img src="Icons/dropdown-arrow.png" alt="dropdown arrow to open submenu">
+                                        </li>
+                                        <li>
+                                            <a href="#" title="New to Nashville?">New to Nashville?</a>
+                                            <img src="Icons/dropdown-arrow.png" alt="dropdown arrow to open submenu"></li>
+                                        <li><a href="#" title="Toast of Music City">Toast of Music City</a></li>
+                                        <li><a href="#" title="Travel">Travel</a></li>
+                                        <li>
+                                            <a href="#" title="Opinion">Opinion</a>
+                                            <img src="Icons/dropdown-arrow.png" alt="dropdown arrow to open submenu">
+                                        </li>
+                                        <li><a href="#" title="Weather">Weather</a></li>
+                                        <li><a href="#" title="E-Edition">E-Edition</a></li>
+                                        <li><a href="#" title="Crosswords">Crosswords</a></li>
+                                        <li><a href="#" title="Comics">Comics</a></li>
+                                        <li><a href="#" title="Advertise with Us">Advertise with Us</a></li>
+                                        <li><a href="#" title="Newsletters">Newsletters</a></li>
+                                        <li><a href="#" title="Connect With Us">Connect With Us</a></li>
+                                        <li><a href="#" title="Instagram">Instagram</a></li>
+                                        <li><a href="#" title="For Subscribers">For Subscribers</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                <li><a href="#" id="logo" title="Logo">Tennessean<span class="logo-blue-point">.</span></a></li><!--TBD-->
                 <li><a href="#" title="Home">Home</a></li>
                 <li><a href="#" title="News">News</a></li>
                 <li><a href="#" title="Countries">Countries</a></li>
@@ -57,9 +162,28 @@
                 <li><a href="#" title="Dining">Dining</a></li>
                 <li><a href="#" title="Life">Life</a></li>
                 <li><a href="#" title="Explore Tennessee">Explore Tennessee</a></li>
+                <li><a href="#" title="New to Nashville?">New to Nashville?</a></li>
+                <li><a href="#" title="Toast of Music City">Toast of Music City</a></li>
+                <li><a href="#" title="Travel">Travel</a></li>
+                <li><a href="#" title="Opinion">Opinion</a></li>
+                <li><a href="#" title="Weather">Weather</a></li>
+                <li><a href="#" title="E-Edition">E-Edition</a></li>
+                <li><a href="#" title="Crosswords">Crosswords</a></li>
+                <li><a href="#" title="Comics">Comics</a></li>
+                <li><a href="#" title="Advertise with Us">Advertise with Us</a></li>
+                <li><a href="#" title="Newsletters">Newsletters</a></li>
+                <li><a href="#" title="Connect With Us">Connect With Us</a></li>
+                <li><a href="#" title="Instagram">Instagram</a></li>
+                <li><a href="#" title="For Subscribers">For Subscribers</a></li>
+            </ul>
+            <ul id="secondary-menu">
+                <li><a href="#" title="Subscribe" id="subscribe-underlined" class="link-on-left">Subscribe</a></li>
+                <li><a href="#" title="Sign in" class="link-on-left">Sign In</a></li>
             </ul>
         </div>
     </nav>
+
+
 <div class="container-main">
     <div class="main-article">
         <img src="https://via.placeholder.com/370x205" alt="Main article image"/>
@@ -148,14 +272,16 @@
     </div>
 </div>
 
-    <div class="container-other-stuff">
+<div class="container-other-stuff">
         <aside class="aside">
             <div class="adv">
                 <img src="https://via.placeholder.com/300x110" alt="Advertisement">
                 <p>Advertisement</p>
             </div>
             <div class="more-stories">
-                <div class="rectangle"></div><h3>More Stories</h3>
+                <div>
+                    <div class="rectangle"></div><h3>More Stories</h3>
+                </div>
                 <div class="more-stories-news">
                     <div class="content-article">
                         <a href="#">
