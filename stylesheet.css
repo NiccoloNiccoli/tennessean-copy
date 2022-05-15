@@ -1,5 +1,4 @@
 @import url('http://fonts.cdnfonts.com/css/unify-serif');
-
 html{
     font-size:100%;
     z-index: 0;
@@ -117,10 +116,10 @@ body{
     background-color: #222222;
     position: fixed;
     z-index: 0;
-    width: 100%;
-    height: 100%;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     background-color: rgba(0,0,0,.53);
@@ -512,54 +511,247 @@ body{
 #manage-cookies{
     font-weight: bold;
 }
-/* end footer*/
-/*
-.container-main{
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-}
-.main-article{
-    display: block;
-    position: relative;
-}
-.secondary-articles{
-    display: block;
-    position: relative;
-}
-.main-article a:link, .main-article a:visited{
-    color:#222222;
-    text-decoration: none;
-    font-family: Helvetica,Arial, sans-serif;
-    font-weight: 600;
-    font-size: 22px;
-}
-.main-article a:hover{
-    text-decoration: underline;
-    text-decoration-color: #009BFF;
-}
-.secondary-articles a:link, .secondary-articles a:visited{
-    color:#222222;
-    text-decoration: none;
-    font-family: Helvetica,Arial, sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-}
-.secondary-articles a:hover{
-    text-decoration: underline;
-    text-decoration-color: #009BFF;
+
+
+@media screen and (max-width: 768px){
+    /* START NAVBAR */
+    #menu{
+        padding:0 0 0 20px;
+    }
+    #menu li{
+        display: none;
+    }
+    #menu li:nth-child(1){
+        display: initial;
+    }
+    #menu li:nth-child(2){
+        display: initial;
+    }
+    #menu li a:hover{
+        font-weight: 900;
+    }
+    #secondary-menu li{
+        font-size: 0.8rem;
+    }
+
+    .overlay{
+        right: 0;
+    }
+
+    /* start dropdown */
+    .dropdown-content{
+        right:0;
+        width: 100vw;
+    }
+    #title-dd{
+        font-size: 2.5rem;
+    }
+
+    #buttons-dd button{
+        min-width: 150px;
+    }
+
+    #sign-in{
+        margin-left: auto;
+    }
+
+    .main-topics-container ul{
+        display: flex;
+        flex-direction: column;
+    }
+    .main-topics-container ul li{
+        margin: 10px 0 10px 0;
+    }
+
+    #menu .main-topics-container li{
+        display: flex;
+    }
+
+    /* end dropdown */
+    /* END NAVBAR */
+
+    /* START MAIN */
+    .container-main{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        max-height: 100%;
+        margin: 0 0 20px 0;
+        background-color: #ffffff;
+    }
+
+    .main-article, .secondary-articles-column{
+        margin: 0;
+    }
+
+    .content-article{
+        background-color: #ffffff;
+        position: relative;
+        padding: 10px 0 0 30px;
+    }
+    .main-article .content-article{
+        top:-60px;
+        width:85%;
+    }
+    .main-article img{
+        object-fit: cover;
+        width: 100%;
+    }
+    .secondary-articles-column{
+        margin: 0 30px 0 30px;
+    }
+    .secondary-article img{
+        object-fit: cover;
+        width: 100%;
+    }
+    .secondary-article .content-article{
+        top:-40px;
+        width: 90%;
+        padding: 0;
+    }
+
+    .recent-news-column{
+        display: none;
+    }
+
+    .square{
+        width: 8px;
+        height: 8px;
+        display: inline-block;
+        background-color: #009BFF;
+        margin: 0 5px 0 0;
+    }
+    .for-subscribers{
+        color: #009BFF;
+        font-size: 0.75rem;
+        font-weight: 550;
+        margin:0;
+        font-family: 'Unify Sans', Helvetica, Arial, sans-serif;
+    }
+    /* END MAIN */
+
+    /* aside column start */
+    .aside{
+        display: none;
+    }
+
+    /* start newsfeed column */
+    .newsfeed .content-article{
+        margin:20px 30px 0 30px;
+        padding: 0;
+    }
+
+    .newsfeed .content-article a .title-and-topic .recent-news-title h5{
+        font-size: 1.1rem;
+        padding:0;
+        margin:5px 10px 0 0;
+    }
+
+    .newsfeed .additional-data{
+        font-size: 0.75rem;
+    }
+    /* end newsfeed column*/
+
+    /* start footer */
+    .footer{
+        line-height: 1.6rem;
+    }
+    /* end footer*/
 }
 
-.content-article{
-    max-width: 320px;
-    position: absolute;
-    top: 200px;
-    background-color: #ffffff;
+
+@media screen and (max-width: 1024px) and (min-width: 768px){
+    /* start navbar */
+    #menu{
+        padding-left: 20px;
+    }
+    /* end navbar */
+
+    /* START MAIN */
+    .container-main{
+        flex-direction: row;
+        flex-grow: 1;
+    }
+    .main-article{
+        margin-left: 60px;
+        line-height: 1.3rem;
+        object-fit: contain;
+    }
+    .secondary-articles-column{
+        margin-right: 60px;
+    }
+
+    .secondary-article .content-article{
+        top:-30px;
+        width: 70%;
+    }
+
+    .secondary-article img{
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .recent-news-column{
+        display: none;
+    }
+
+    .content-article a h3{
+        line-height: 1.6rem;
+    }
+
+    .content-article a h5{
+        line-height: 1.3rem;
+    }
+    .square{
+        width: 8px;
+        height: 8px;
+        display: inline-block;
+        background-color: #009BFF;
+        margin: 0 5px 0 0;
+    }
+    .for-subscribers{
+        color: #009BFF;
+        font-size: 0.75rem;
+        font-weight: 550;
+        margin:0;
+        font-family: 'Unify Sans', Helvetica, Arial, sans-serif;
+    }
+    /* END MAIN */
+
+
+    /* aside column start */
+    .aside{
+        display: none;
+    }
+
+    /* start newsfeed column */
+    .newsfeed{
+        width: 100%;
+    }
+    .newsfeed .content-article{
+        margin:20px 70px 0 70px;
+        padding: 0;
+    }
+
+    .newsfeed .content-article a .title-and-topic .recent-news-title h5{
+        font-size: 1.2rem;
+        padding:0;
+        margin:5px 10px 0 0;
+    }
+
+    .newsfeed .additional-data{
+        font-size: 0.9rem;
+    }
+
+    .newsfeed picture{
+        margin-left: auto;
+    }
+    /* end newsfeed column*/
+
+    /* start footer */
+    .footer{
+        line-height: 1.6rem;
+    }
+    /* end footer*/
 }
-.content-article h3{
-    margin-bottom: 5px;
-}
-.content-article .article-gist p{
-    margin: auto;
-}
- */
